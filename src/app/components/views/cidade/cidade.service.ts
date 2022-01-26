@@ -24,4 +24,12 @@ export class CidadeService {
     console.log(url)
     return this.http.get<Cidade[]>(url)
   }
+
+  mensagem(str: String): void{
+    this._snack.open(`${str}`, 'ok', {
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
+      duration: 3000
+    })
+  }
 }
