@@ -1,0 +1,42 @@
+<div class="content">
+
+    <div class="title">
+        <h1>Estados</h1>
+    </div>
+
+<div class="mat-elevation-z8 content-table">
+    <table class="table" mat-table [dataSource]="estados">
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="cod_Estado">
+          <th mat-header-cell *matHeaderCellDef> Codigo Estado </th>
+          <td mat-cell *matCellDef="let row"> {{ row.cod_Estado }} </td>
+        </ng-container>
+
+         <!-- Name Column -->
+         <ng-container matColumnDef="sgl_Estado">
+            <th mat-header-cell *matHeaderCellDef> Sigla Estado </th>
+            <td mat-cell *matCellDef="let row"> {{ row.sgl_Estado }} </td>
+          </ng-container>
+
+           <!-- Name Column -->
+        <ng-container matColumnDef="nome_Estado">
+            <th mat-header-cell *matHeaderCellDef> Nome Estado </th>
+            <td mat-cell *matCellDef="let row"> {{ row.nome_Estado }} </td>
+          </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="cidades">
+          <th mat-header-cell *matHeaderCellDef> Cidades </th>
+          <td mat-cell *matCellDef="let row"> 
+            <a class="cidades" routerLink="{{ row.cod_Estado }}/cidades">
+              <i class="material-icons">location_city</i>
+            </a>  
+          </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+</div>
+</div>
